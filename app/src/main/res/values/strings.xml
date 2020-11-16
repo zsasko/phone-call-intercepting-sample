@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Phone Call Intercepting Sample</string>
+
+    <string name="logs">Logs:</string>
+
+    <string name="global_enable_contact_phone_state_permissions">Please enable contact and read phone state permission</string>
+    <string name="global_message_title">Message</string>
+    <string name="global_call_screening_required_message">You have to select Call Screening app in the following dialog in order for app to work.</string>
+
+
+</resources>
