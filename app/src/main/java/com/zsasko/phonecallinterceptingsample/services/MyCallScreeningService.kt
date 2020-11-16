@@ -9,12 +9,6 @@ import com.zsasko.phonecallinterceptingsample.commons.extensions.removeTelPrefix
 import com.zsasko.phonecallinterceptingsample.commons.utils.NotificationManagerImpl
 import org.greenrobot.eventbus.EventBus
 
-
-const val TAG = "MyCallScreeningService"
-
-/**
- *
- */
 class MyCallScreeningService : CallScreeningService() {
 
     private val notificationManager = NotificationManagerImpl()

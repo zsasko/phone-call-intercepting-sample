@@ -17,9 +17,9 @@ import java.lang.ref.WeakReference
 
 class MainActivity : BaseActivity() {
 
-    var manifestPermissionRequestor = ManifestPermissionRequesterImpl()
+    private val manifestPermissionRequestor = ManifestPermissionRequesterImpl()
 
-    var capabilitiesRequestor = CapabilitiesRequestorImpl()
+    private val capabilitiesRequestor = CapabilitiesRequestorImpl()
 
     // flag that restarts checking capabilities dialog, after user enables manifest permissions
     // via app settings page
