@@ -93,7 +93,7 @@ class MainActivity : BaseActivity() {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onMessageEvent(event: MessageEvent) {
-        val newText = String.format("%s%s\n", textLog.text.toString(), event.message)
+        val newText = String.format("%s\n%s", event.message, textLog.text.toString())
         textLog.setText(newText)
     }
 
