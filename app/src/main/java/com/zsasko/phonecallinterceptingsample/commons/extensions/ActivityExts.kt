@@ -2,6 +2,7 @@ package com.zsasko.phonecallinterceptingsample.commons.extensions
 
 import android.app.Activity
 import android.app.role.RoleManager
+import android.content.Intent
 import android.os.Build
 import android.telecom.TelecomManager
 import androidx.annotation.RequiresApi
@@ -25,4 +26,15 @@ fun Activity.startCallScreeningPermissionScreen(requestId: Int) {
 fun Activity.hasDialerCapability(): Boolean {
     val telecomManager = getSystemService(AppCompatActivity.TELECOM_SERVICE) as TelecomManager
     return packageName.equals(telecomManager.defaultDialerPackage)
+}
+
+/**
+ * Displays a dialog where user can select default dialer app.
+ * @param requestId Request ID
+ */
+fun Activity.startSelectDialerScreen(requestId: Int) {
+    if (this.hasDialerCapability()) return
+    val intent = Intent(TelecomManager.ACTION_CHANGE_DEFAULT_DIALER)
+            .putExtra(TelecomManager.EXTRA_CHANGE_DEFAULT_DIALER_PACKAGE_NAME, packageName)
+    startActivityForResult(intent, requestId)
 }

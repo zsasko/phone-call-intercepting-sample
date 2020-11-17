@@ -29,7 +29,7 @@ interface ManifestPermissionRequester {
  * @version 1.0.0
  */
 class ManifestPermissionRequesterImpl : ManifestPermissionRequester,
-    EasyPermissions.PermissionCallbacks {
+        EasyPermissions.PermissionCallbacks {
 
     var activity: WeakReference<BaseActivity>? = null
 
@@ -37,9 +37,9 @@ class ManifestPermissionRequesterImpl : ManifestPermissionRequester,
      * List of permissions to be permitted.
      */
     private val permissions =
-        arrayOf(
-            Manifest.permission.READ_PHONE_STATE,
-        )
+            arrayOf(
+                    Manifest.permission.READ_PHONE_STATE,
+            )
 
     /**
      * Invokes permissions enabling request.
@@ -52,17 +52,17 @@ class ManifestPermissionRequesterImpl : ManifestPermissionRequester,
             } else {
                 // Do not have permissions, request them now
                 EasyPermissions.requestPermissions(
-                    it, it.getString(R.string.global_enable_contact_phone_state_permissions),
-                    RC_PERMISSIONS, *permissions
+                        it, it.getString(R.string.global_enable_contact_phone_state_permissions),
+                        RC_PERMISSIONS, *permissions
                 )
             }
         }
     }
 
     override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
+            requestCode: Int,
+            permissions: Array<out String>,
+            grantResults: IntArray
     ) {
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
     }

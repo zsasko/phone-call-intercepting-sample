@@ -55,15 +55,15 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
+            requestCode: Int,
+            permissions: Array<out String>,
+            grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         manifestPermissionRequestor.onRequestPermissionsResult(
-            requestCode,
-            permissions,
-            grantResults
+                requestCode,
+                permissions,
+                grantResults
         )
     }
 

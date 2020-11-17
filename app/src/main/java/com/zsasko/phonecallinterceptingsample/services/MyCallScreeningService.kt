@@ -22,8 +22,8 @@ class MyCallScreeningService : CallScreeningService() {
     }
 
     private fun handlePhoneCall(
-        response: CallResponse.Builder,
-        phoneNumber: String
+            response: CallResponse.Builder,
+            phoneNumber: String
     ): CallResponse.Builder {
         if (phoneNumber == FORBIDDEN_PHONE_CALL_NUMBER) {
             response.apply {
